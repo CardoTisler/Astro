@@ -1,10 +1,26 @@
 <%- include("../partials/header") %>
 
-<h1>This is the new page, for creating new recipes</h1>
+<h1>Submit a new recipe!</h1>
+
 <form method="POST" action="/recipes/new"> 
     <input type="text" name="name" placeholder="Recipe name">
     <input type="text" name="image" placeholder="Recipe image">
     <input type="text" name="description" placeholder="Recipe description">
+    <input type="number" name="cookingTime" placeholder="Cooking time">
+
+    <div id="ingredients-container">
+        <label>Ingredient 1</label><br>
+        <input type="text" name="ingredients">
+    </div>
+    <a class="btn btn-outline-info" onclick=addIngredientSlot() id="add-ingredient-btn">Add ingredient</a>
+    
+    <div id="steps-container">
+        <label>Step 1</label><br>
+        <input type="text" name="steps">
+    </div>
+    <a class="btn btn-outline-info" onclick=addStepsSlot() id="add-steps-btn">Add step</a>
+
     <button>Submit</button>
 </form>
+<script type="text/javascript" src="/scripts/recipescripts.js"></script>
 <%- include("../partials/footer") %>

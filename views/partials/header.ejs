@@ -1,21 +1,43 @@
 <html>
     <head>
         <title>Astro</title>
-        <link rel="stylesheet" type="text/css" href="/public/stylesheet.css">
+        <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <script src=https://code.jquery.com/jquery-3.5.0.min.js></script>
     </head>
 
     <body>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="/recipes">Astro</a>
+              <ul class="navbar-nav navbar-inline">
+                <% if(!currentUser){ %>
+                    <a class="nav-link" href="/login">Login</a>
+                    <a class="nav-link" href="/register">Signup</a>
+                <% } else { %>
+                    <a class="btn btn-outline-info" href="/recipes/new">Add new recipe</a>
+                    <a class="nav-link">Signed in as <%=currentUser.username%></a>
+                    <a class="nav-link" href="/logout">Logout</a>
+                <% } %>
+              </ul>
+          </nav>
+
+
+
+
+
+
+        <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" >Astro</a>
 
-                <% if(!currentUser){ %>
-                    <a class="btn btn-primary" href="/login">Log in</a>
-                    <a class="btn btn-primary" href="/register">Create account</a>
-                <% } else { %>
-                    <a class="btn btn-primary" href="/recipes/new">Add new recipe</a>
-                    <a class="btn btn-primary" href="/logout">Log out</a>
-                    <p>Signed in as: <%=currentUser.username%></p>
-                <% } %>
-        </nav>
+            <% if(!currentUser){ %>
+                <a class="btn btn-primary" href="/login">Log in</a>
+                <a class="btn btn-primary" href="/register">Create account</a>
+            <% } else { %>
+                <a class="btn btn-primary" href="/recipes/new">Add new recipe</a>
+                <a class="btn btn-primary" href="/logout">Log out</a>
+                <p>Signed in as: <%=currentUser.username%></p>
+            <% } %>
+        </nav> -->
+        
+
 

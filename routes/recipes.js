@@ -26,23 +26,24 @@ router.get("/recipes/new", middleware.isLoggedIn, function(req, res){
 });
 //CREATE route
 router.post("/recipes/new", middleware.isLoggedIn, function(req, res){ //gets req.body data from the form in new.ejs
-    var recipeName = req.body.name;
-    var recipeImage = req.body.image;
-    var recipeDesc = req.body.description;
-    var newRecipe = {name: recipeName, image: recipeImage, description: recipeDesc}; //builds variable with new data
-    
+    var newRecipe = {name: req.body.name,
+                    image: req.body.image, 
+                    description: req.body.description, 
+                    cookingTime: req.body.cookingTime, 
+                    ingredients: req.body.ingredients,
+                    steps: req.body.steps}; //builds variable with new data
+
     var author = { //get the currently logged in user data and add it to Recipe object
         id :req.user._id,
         username :req.user.username
     };
-
     Recipe.create(newRecipe, function(err, newRecipe){ //creates new element in database with given data
         if(err){
             console.log(err)
         } else {
             newRecipe.author = author;
             newRecipe.save();
-
+            console.log(newRecipe);
             res.redirect("/recipes"); //redirects back to /recipes, where it runs the code again and rebuilds content
         }
     });
