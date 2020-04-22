@@ -8,12 +8,14 @@
     <body>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" >Astro</a>
-                <a class="btn btn-primary" href="/recipes/new">Add new recipe</a>
-                
-                <a class="btn btn-primary" href="#">Log in</a>
-                
-                <a class="btn btn-primary" href="#">Create account</a>
-                
-                <a class="btn btn-primary" href="#">Log out</a>
+
+                <% if(!currentUser){ %>
+                    <a class="btn btn-primary" href="/login">Log in</a>
+                    <a class="btn btn-primary" href="/register">Create account</a>
+                <% } else { %>
+                    <a class="btn btn-primary" href="/recipes/new">Add new recipe</a>
+                    <a class="btn btn-primary" href="/logout">Log out</a>
+                    <p>Signed in as: <%=currentUser.username%></p>
+                <% } %>
         </nav>
 

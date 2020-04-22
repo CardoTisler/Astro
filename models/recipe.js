@@ -7,9 +7,16 @@ var recipeSchema = new mongoose.Schema({
     comments: [
         {
             type: mongoose.Schema.Types.ObjectId,
-            ref: "Comment",
+            ref: "Comment"
         }
-    ]
+    ],
+    author:{
+        id: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "User"
+        },
+        username: String
+    }
 });
 
 // var Recipe = mongoose.model("Recipe", recipeSchema);

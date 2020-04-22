@@ -1,0 +1,39 @@
+<%- include("../partials/header") %>
+
+<h1>This is the show page</h1>
+<h1><%= recipe.name %></h1>
+
+<% if(currentUser && recipe.author.id.equals(currentUser._id)){ %>
+    <form method="GET" action="/recipes/<%=recipe.id%>/edit">
+        <button class="btn btn-primary">Edit recipe</button>
+    </form>
+
+    <form method="POST" action="/recipes/<%=recipe.id%>?_method=DELETE">
+        <button class="btn btn-outline-warning">Delete recipe</button>
+    </form>
+<% } %>
+
+<form method="GET" action="/recipes/<%=recipe.id%>/comments/new"> 
+    <button class="btn btn-outline-info">Add comment</button>
+</form>
+
+<h2>THESE ARE THE COMMENTS FROM RECIPE</h2>
+<% recipe.comments.forEach(function(comment){ %>
+    <h5><%= comment.text %></h5>
+    <h3><strong><%= comment.author.username %></strong></h3>
+    <% if(currentUser && comment.author.id.equals(currentUser._id)){ %>
+        <form method="GET" action="/recipes/<%=recipe.id%>/comment/<%=comment.id%>/edit"> 
+            <button class="btn btn-outline-secondary">Edit comment</button> 
+        </form>
+
+        <form method="POST" action="/recipes/<%=recipe.id%>/comment/<%=comment.id%>?_method=DELETE">
+            <button class="btn btn-outline-danger">Delete comment</button>
+        </form>
+    <% } %>
+    
+<% }); %>
+
+
+
+
+<%- include("../partials/footer") %>
