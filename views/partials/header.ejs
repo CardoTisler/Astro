@@ -1,25 +1,32 @@
 <html>
     <head>
         <title>Astro</title>
-        <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
         <script src=https://code.jquery.com/jquery-3.5.0.min.js></script>
     </head>
 
     <body>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="/recipes">Astro</a>
-              <ul class="navbar-nav navbar-inline">
-                <% if(!currentUser){ %>
-                    <a class="nav-link" href="/login">Login</a>
-                    <a class="nav-link" href="/register">Signup</a>
-                <% } else { %>
-                    <a class="btn btn-outline-info" href="/recipes/new">Add new recipe</a>
-                    <a class="nav-link">Signed in as <%=currentUser.username%></a>
-                    <a class="nav-link" href="/logout">Logout</a>
-                <% } %>
-              </ul>
+            <div id="navbar-content">
+                <a class="navbar-brand" href="/recipes">Astro</a>
+                <div id="navbar-buttons">
+                    <ul class="navbar-nav navbar-inline">
+                        <% if(!currentUser){ %>
+                            <a class="nav-link" href="/login">Login</a>
+                            <a class="nav-link" href="/register">Signup</a>
+                        <% } else { %>
+                            <a class="btn btn-outline-info" href="/recipes/new">Add new recipe</a>
+                            <a class="nav-link">Signed in as <%=currentUser.username%></a>
+                            <a class="nav-link" href="/logout">Logout</a>
+                        <% } %>
+                    </ul>
+                </div>
+            </div>
+            
           </nav>
+          <div id="body-content">
+        
 
 
 

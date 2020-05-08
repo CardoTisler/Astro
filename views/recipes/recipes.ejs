@@ -1,10 +1,8 @@
 <%- include("../partials/header") %>
-<h1>This is the recipes main page</h1>
-
 
 <!-- var recipes holds every recipe element in database, also the _id of the recipe required in the URL for REST routing -->
 <% recipes.forEach(function(recipe){ %>
-    <div class="card" style="width: 15rem; display:inline-flex">
+    <div class="card" style="width: 24%; display:inline-flex;">
         <img class="card-img-top" src="<%=recipe.image%>" alt="Food pic">
         <div class="card-body">
             <h5 class="card-title"><%=recipe.name%></h5>

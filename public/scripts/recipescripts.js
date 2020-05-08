@@ -13,16 +13,16 @@ function addIngredientSlot(){
     i++;
 }
 
-var j = 2;
-function addStepsSlot(){
-    var container = $("#steps-container");
+// var j = 2;
+// function addStepsSlot(){
+//     var container = $("#steps-container");
 
-    var template = `
-        <label>Step ${j}:</label><br>
-        <input type="text" name ="steps">`;
-    div = document.createElement("div");
-    div.innerHTML = template;
-    container.append(div);
+//     var template = `
+//         <label>Step ${j}:</label><br>
+//         <input type="text" name ="steps">`;
+//     div = document.createElement("div");
+//     div.innerHTML = template;
+//     container.append(div);
     
-    j++;
-}
+//     j++;
+// }

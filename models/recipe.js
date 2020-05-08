@@ -6,7 +6,7 @@ var recipeSchema = new mongoose.Schema({
     description: String,
     cookingTime: Number,
     ingredients: [],
-    steps: [],
+    steps: String,
     comments: [
         {
             type: mongoose.Schema.Types.ObjectId,

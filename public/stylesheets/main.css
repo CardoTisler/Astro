@@ -1,1 +1,26 @@
+body{
+    background-color: rgb(226, 235, 240) !important;
+}
 
+#body-content{
+    margin: 2% 10% 0% 10%;
+}
+
+#h1{
+    font-size: 10rem; 
+}
+
+#navbar-content{
+    display: inline-flex;
+    margin-left: 9%;
+}
+.bg-light {
+    background-color: rgb(236, 238, 238) !important;
+}
+
+#landing-body-content{
+    background-image: url("/images/landing.jpg");
+}
+#landing-body-content a{
+    margin-left: 45vw;
+}
