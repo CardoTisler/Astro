@@ -24,6 +24,7 @@ router.post("/recipes/:id/comments/new", middleware.isLoggedIn, function(req, re
                 id: req.user._id,
                 username: req.user.username
             }
+            
             Comment.create(newData, function(err, createdComment){ //create the new comment
                 if(err){
                     console.log(err);

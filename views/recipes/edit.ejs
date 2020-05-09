@@ -1,10 +1,36 @@
 <%- include("../partials/header") %>
 
-<h1>This is the edit route</h1>
 <form action="/recipes/<%=recipe._id%>?_method=PUT" method="POST">
-    <input type="text" name="name" value="<%=recipe.name%>">
-    <input type="text" name="image" value="<%=recipe.image%>">
-    <input type="text" name="description" value="<%=recipe.description%>">
+    <div class="form-group row">
+        <div class="col-3">
+            <input type="text" class="form-control" name="name" value="<%=recipe.name%>">
+        </div>
+        <div class="col-7">
+            <input type="text" class="form-control" name="image" value="<%=recipe.image%>">
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-6">
+            <input type="text" class="form-control" name="description" value="<%=recipe.description%>">
+        </div>
+        <div class="col-2">
+            <input type="number" class="form-control" name="cookingTime" value="<%=recipe.cookingTime%>">
+        </div>   
+    </div>
+
+    <div class="form-group">
+        <div>
+            <label>Directions</label><br>
+            <textarea rows="5" cols="50" class="form-control" name="steps"><%=recipe.steps%></textarea>
+        </div>
+
+        <div class="col-3" style="margin-top: 1rem; padding: 0;">
+            <label>Ingredients</label>
+            <% recipe.ingredients.forEach(function(ingredient, index){ %>
+                <input type="text" class="form-control" value="<%=ingredient%>">
+            <% }) %>
+        </div>
+
     <button>Edit recipe!</button>
 </form>
 

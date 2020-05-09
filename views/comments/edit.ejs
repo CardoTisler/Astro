@@ -1,11 +1,8 @@
 <%- include("../partials/header") %>
 
-<h1>This is the comments/edit page</h1>
-
 <form method="POST" action="/recipes/<%=campgroundId%>/comments/<%=comment.id%>?_method=PUT">
-    <input type="text" name="author" value="<%=comment.author%>">
-    <input type="text" name="text" value="<%=comment.text%>">
-    <button>Submit</button>
+    <textarea class="form-control col-7 mt-5" type="text" name="text" rows="3"><%=comment.text%></textarea>
+    <button>Edit comment</button>
 </form>
 
 <%- include("../partials/footer") %>

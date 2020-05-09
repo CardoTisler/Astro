@@ -1,26 +1,39 @@
 <%- include("../partials/header") %>
 
-<h1>Submit a new recipe!</h1>
+<h1>Create a new recipe!</h1>
 
 <form method="POST" action="/recipes/new"> 
-    <input type="text" name="name" placeholder="Recipe name">
-    <input type="text" name="image" placeholder="Recipe image">
-    <input type="text" name="description" placeholder="Recipe description">
-    <input type="number" name="cookingTime" placeholder="Cooking time">
-
-    <div id="ingredients-container">
-        <label>Ingredient 1</label><br>
-        <input type="text" name="ingredients">
+    <div class="form-group row">
+        <div class="col-3">
+            <input type="text" class="form-control" name="name" placeholder="Recipe name">
+        </div>
+        <div class="col-7">
+            <input type="text" class="form-control" name="image" placeholder="Recipe image url">
+        </div>
     </div>
-    <a class="btn btn-outline-info" onclick=addIngredientSlot() id="add-ingredient-btn">Add ingredient</a>
+    <div class="form-group row">
+        <div class="col-6">
+            <input type="text" class="form-control" name="description" placeholder="Recipe short description">
+        </div>
+        <div class="col-2">
+            <input type="number" class="form-control" name="cookingTime" placeholder="Cooking time">
+        </div>   
+    </div>
+
+    <div class="form-group">
+        <div id="steps-container">
+            <label>Directions</label><br>
+            <textarea rows="5" cols="50" class="form-control" name="steps"></textarea>
+        </div>
     
-    <div id="steps-container">
-        <label>Directions</label><br>
-        <textarea rows="5" cols="50" name="steps"></textarea>
+        <div id="ingredients-container" class="col-3" style="margin-top: 1rem; padding: 0;">
+            <label>Ingredient 1</label><br>
+            <input type="text" class="form-control" name="ingredients">
+        </div>
+        <a class="btn btn-outline-info" onclick=addIngredientSlot() id="add-ingredient-btn">Add ingredient</a>
     </div>
-    <!-- <a class="btn btn-outline-info" onclick=addStepsSlot() id="add-steps-btn">Add step</a> -->
 
-    <button>Submit</button>
+    <button>Submit recipe</button>
 </form>
 <script type="text/javascript" src="/scripts/recipescripts.js"></script>
 <%- include("../partials/footer") %>
