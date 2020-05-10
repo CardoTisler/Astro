@@ -62,6 +62,6 @@ app.use(commentsRoutes);
 app.use(recipesRoutes);
 app.use(indexRoutes);
 
-app.listen(3000, process.env.IP, function(){
-    console.log("Server running.");
+app.listen(process.env.PORT, process.env.IP, function(){
+    console.log("Server running on ", process.env.PORT);
 });
