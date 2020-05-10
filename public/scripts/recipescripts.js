@@ -9,7 +9,6 @@ function addIngredientSlot(){
     div = document.createElement("div");
     div.innerHTML = template;
     container.append(div);
-    
     i++;
 }
 
