@@ -15,7 +15,7 @@ router.get("/recipes", function(req, res){ //every time recipes.ejs file loads, 
         if(err){
             console.log(err)
         } else {
-            res.render("views/recipes/recipes", {recipes : allRecipes}) //renders recipes.ejs and inserts allRecipes as 'recipes'
+            res.render("recipes/recipes", {recipes : allRecipes}) //renders recipes.ejs and inserts allRecipes as 'recipes'
         }
     });
 });
