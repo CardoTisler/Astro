@@ -36,7 +36,6 @@ app.use(require("express-session")({
     resave: false,
     saveUninitialized: false,
     store: new MemoryStore()
-
 }));
 app.use(passport.initialize());
 app.use(passport.session());
