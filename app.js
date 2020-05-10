@@ -35,7 +35,7 @@ app.use(require("express-session")({
     secret: "Spaceworms are bad pets",
     resave: false,
     saveUninitialized: false,
-    store: new memoryStore(options)
+    store: new memoryStore(options.expires)
 }));
 app.use(passport.initialize());
 app.use(passport.session());
