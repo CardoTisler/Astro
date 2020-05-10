@@ -24,7 +24,7 @@ mongoose.set('useUnifiedTopology', true);
 
 // mongoose.connect("mongodb://localhost/recipeSite");
 mongoose.connect("mongodb+srv://cardo:egg@astro-xkx66.mongodb.net/test?retryWrites=true&w=majority");
-
+console.log("egg is ready")
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
