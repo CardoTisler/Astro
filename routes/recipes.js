@@ -6,7 +6,7 @@ var middleware = require("../middleware/index.js")
 // <------------ RECIPES ROUTES ------------>
 //index page
 router.get("/", function(req, res){
-    res.render("landing");
+    res.sendFile('index.html', {root: "."});
 });
 
 //INDEX route
