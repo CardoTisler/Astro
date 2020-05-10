@@ -22,7 +22,8 @@ mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
 mongoose.set('useUnifiedTopology', true);
 
-mongoose.connect("mongodb://localhost/recipeSite");
+// mongoose.connect("mongodb://localhost/recipeSite");
+mongoose.connect("mongodb+srv://cardo:egg@astro-xkx66.mongodb.net/test?retryWrites=true&w=majority");
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
