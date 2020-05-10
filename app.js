@@ -29,14 +29,14 @@ app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 app.use(methodOverride("_method"));
 
-var memoryStore = require('session-memory-store')(session);
+var MemoryStore = require('session-memory-store')(session);
 app.use(cookieParser());
 app.use(require("express-session")({
     secret: "Spaceworms are bad pets",
     resave: false,
     saveUninitialized: false,
-    store: new memoryStore(options.expires)
-    
+    store: new MemoryStore()
+
 }));
 app.use(passport.initialize());
 app.use(passport.session());
