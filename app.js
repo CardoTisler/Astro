@@ -29,6 +29,7 @@ app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 app.use(methodOverride("_method"));
 
+// memory leak fix
 var MemoryStore = require('session-memory-store')(session);
 app.use(cookieParser());
 app.use(require("express-session")({
