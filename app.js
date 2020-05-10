@@ -28,6 +28,8 @@ mongoose.connect("mongodb+srv://cardo:egg@astro-xkx66.mongodb.net/test?retryWrit
     useCreateIndex: true
 }).then(() => {
     console.log("Connected to MongoDB successfully!")
+}).catch(err => {
+    console.log("ERROR: ", err.message);
 });
 
 app.use(bodyParser.urlencoded({extended: true}));
