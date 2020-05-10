@@ -4,7 +4,9 @@ var express     = require("express"),
     mongoose    = require("mongoose"),
     passport    = require("passport"),
     LocalStrategy = require("passport-local"),
-    methodOverride = require("method-override")
+    methodOverride = require("method-override"),
+    cookieParser = require("cookie-parser"),
+    session = require("express-session")
 
 var Recipe = require("./models/recipe.js"),
     Comment = require("./models/comment.js"),
@@ -27,10 +29,13 @@ app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 app.use(methodOverride("_method"));
 
+var memoryStore = require('session-memory-store')(session);
+app.use(cookieParser());
 app.use(require("express-session")({
     secret: "Spaceworms are bad pets",
     resave: false,
-    saveUninitialized: false
+    saveUninitialized: false,
+    store: new memoryStore(options)
 }));
 app.use(passport.initialize());
 app.use(passport.session());
