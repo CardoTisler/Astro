@@ -8,7 +8,6 @@ var express     = require("express"),
     cookieParser = require("cookie-parser"),
     session = require("express-session")
 
-    
 var Recipe = require("./models/recipe.js"),
     Comment = require("./models/comment.js"),
     User = require("./models/user.js");
