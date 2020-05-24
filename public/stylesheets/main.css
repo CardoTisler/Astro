@@ -1,15 +1,10 @@
 body{
     background-color: rgb(255, 255, 255) !important;
-}
-#h1{
-    font-size: 10rem; 
+    font-family: 'Lato', sans-serif;
 }
 
-#landing-body-content{
-    background-image: url("/images/landing.jpg");
-}
-#landing-body-content a{
-    margin-left: 45vw;
+#h1{
+    font-size: 10rem; 
 }
 
 .comment-wrapper .panel-body {
@@ -26,4 +21,26 @@ body{
 .comment-wrapper .media-list .media {
     border-bottom:1px dashed #efefef;
     margin-bottom:25px;
+}
+
+.card{
+    margin-bottom: 5%;
+}
+.card-body .card-text p{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.card-body .btn-outline-info {
+    color: black;
+    border-color: #2c3e50;
+}
+.navbar-inverse{
+    background: #2c3e50;
+}
+.navbar .container .navbar-brand, .btn-outline-info, .nav-item, .nav-link{
+    color: whitesmoke;
+}
+.navbar .navbar-header{
+    margin-left: 1%;
 }

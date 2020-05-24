@@ -1,17 +1,23 @@
 <%- include("../partials/header") %>
 
 <!-- var recipes holds every recipe element in database, also the _id of the recipe required in the URL for REST routing -->
-<% recipes.forEach(function(recipe){ %>
-    <div class="card" style="width: 24%; display:inline-flex;">
-        <img class="card-img-top" src="<%=recipe.image%>" alt="Food pic">
-        <div class="card-body">
-            <h5 class="card-title"><%=recipe.name%></h5>
-            <p class="card-text"><%=recipe.description%></p>
-            <!-- MongoDB -> app.js -> var recipes here -> url here, can extract _id via req.params in app.js -->
-            <a href="/recipes/<%=recipe._id%>" class="btn btn-primary">Read more</a>
-        </div>
-
+<div class="row" style="padding: 1%">
+    
+        <% recipes.forEach(function(recipe){ %>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" style="padding-right: 0px;">
+                <div class="card shadow-sm">
+                    <img class="card-img-top" src="<%=recipe.image%>" alt="Food pic">
+                    <div class="card-body">
+                        <h5 class="card-title"><%=recipe.name%></h5>
+                        <p class="card-text"><%=recipe.description%></p>
+                        <!-- MongoDB -> app.js -> var recipes here -> url here, can extract _id via req.params in app.js -->
+                        <a href="/recipes/<%=recipe._id%>" class="btn btn-outline-info">Read more</a>
+                    </div>
+                </div>
+            </div>
+        <% }) %>
     </div>
-<% }) %>
+</div>
+
 
 <%- include("../partials/footer") %>
