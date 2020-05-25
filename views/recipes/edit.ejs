@@ -27,7 +27,7 @@
         <div class="col-3" style="margin-top: 1rem; padding: 0;">
             <label>Ingredients</label>
             <% recipe.ingredients.forEach(function(ingredient, index){ %>
-                <input type="text" class="form-control" value="<%=ingredient%>">
+                <input type="text" class="form-control" name="ingredients" value="<%=ingredient%>">
             <% }) %>
         </div>
 

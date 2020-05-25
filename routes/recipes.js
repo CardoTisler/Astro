@@ -73,10 +73,13 @@ router.get("/recipes/:id/edit", middleware.checkRecipeOwnership, function(req, r
 
 //UPDATE route
 router.put("/recipes/:id", middleware.checkRecipeOwnership, function(req, res){ //recipe authent
-    var name = req.body.name;
-    var image = req.body.image;
-    var desc = req.body.description;
-    var updatedData = {name: name, image: image, description: desc};
+    var updatedData = {name: req.body.name,
+        image: req.body.image, 
+        description: req.body.description, 
+        cookingTime: req.body.cookingTime, 
+        ingredients: req.body.ingredients,
+        steps: req.body.steps}; //builds variable with new data
+        
     Recipe.findByIdAndUpdate(req.params.id, updatedData, function(err, updatedRecipe){
         if(err){
             console.log(err);
