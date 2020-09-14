@@ -4,7 +4,7 @@ var i = 2;
 function addIngredientSlot(){
     var container = $("#ingredients-container");
     var template = `
-        <label>Ingredient ${i}</label><br>
+        <strong><label for="ingredients">Ingredient ${i}</label></strong>
         <input type="text" class="form-control" name ="ingredients">`;
     div = document.createElement("div");
     div.innerHTML = template;

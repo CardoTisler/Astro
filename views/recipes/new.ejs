@@ -1,39 +1,53 @@
 <%- include("../partials/header") %>
 
-<h1>Create a new recipe!</h1>
+<div class="mt-3">
+    <h1>Create a new recipe!</h1>
+</div>
 
-<form method="POST" action="/recipes/new"> 
-    <div class="form-group row">
-        <div class="col-3">
-            <input type="text" maxlength="50" class="form-control" name="name" placeholder="Recipe name">
+<div class="mt-5">
+    <form method="POST" action="/recipes/new"> 
+        <div class="form-group row">
+            <div class="col-3">
+                <strong><label for="name">Recipe name</label></strong>
+                <input type="text" maxlength="50" class="form-control" name="name">
+            </div>
+            <div class="col-7">
+                <strong><label for="image">Image URL</label></strong>
+                <input type="text" maxlength="200" class="form-control" name="image" placeholder="https://example.com">
+            </div>
         </div>
-        <div class="col-7">
-            <input type="text" maxlength="200" class="form-control" name="image" placeholder="Recipe image url">
+        <div class="form-group row">
+            <div class="col-6">
+                <strong><label for="description">Short description</label></strong>
+                <input type="text" maxlength="100" class="form-control" name="description">
+            </div>
+            <div class="col-2">
+                <strong><label for="cookingTime">Cooking time</label></strong>
+                <input type="number" maxlength="3" class="form-control" name="cookingTime">
+            </div>
+            <div class="col-2">
+                <strong><label for="servings">Servings</label></strong>
+                <input type="number" maxlength="3" class="form-control" name="servings">
+            </div>   
         </div>
-    </div>
-    <div class="form-group row">
-        <div class="col-6">
-            <input type="text" maxlength="100" class="form-control" name="description" placeholder="Recipe short description">
-        </div>
-        <div class="col-2">
-            <input type="number" maxlength="3" class="form-control" name="cookingTime" placeholder="Cooking time">
-        </div>   
-    </div>
 
-    <div class="form-group">
-        <div id="steps-container">
-            <label>Directions</label><br>
-            <textarea rows="5" cols="50" class="form-control" name="steps"></textarea>
+        <div class="form-group">
+            <div id="steps-container">
+                <strong><label for="steps">Instructions</label></strong>
+                <textarea rows="5" cols="50" class="form-control" name="steps"></textarea>
+            </div>
+        
+            <div id="ingredients-container" class="col-3" style="margin-top: 1rem; padding: 0;">
+                <!-- <label>Ingredient 1</label><br> -->
+                <strong><label for="ingredients">Ingredient 1</label></strong>
+                <input type="text" maxlength="20" class="form-control" name="ingredients">
+            </div>
+            <a class="btn btn-outline-info" onclick=addIngredientSlot() id="add-ingredient-btn">Add ingredient</a>
         </div>
-    
-        <div id="ingredients-container" class="col-3" style="margin-top: 1rem; padding: 0;">
-            <label>Ingredient 1</label><br>
-            <input type="text" maxlength="20" class="form-control" name="ingredients">
-        </div>
-        <a class="btn btn-outline-info" onclick=addIngredientSlot() id="add-ingredient-btn">Add ingredient</a>
-    </div>
 
-    <button>Submit recipe</button>
-</form>
+        <button>Submit recipe</button>
+    </form>
+</div>
+
 <script type="text/javascript" src="/scripts/recipescripts.js"></script>
 <%- include("../partials/footer") %>

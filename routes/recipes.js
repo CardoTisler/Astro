@@ -29,7 +29,8 @@ router.post("/recipes/new", middleware.isLoggedIn, function(req, res){ //gets re
     var newRecipe = {name: req.body.name,
                     image: req.body.image, 
                     description: req.body.description, 
-                    cookingTime: req.body.cookingTime, 
+                    cookingTime: req.body.cookingTime,
+                    servings: req.body.servings, 
                     ingredients: req.body.ingredients,
                     steps: req.body.steps}; //builds variable with new data
 
@@ -78,6 +79,7 @@ router.put("/recipes/:id", middleware.checkRecipeOwnership, function(req, res){ 
         description: req.body.description, 
         cookingTime: req.body.cookingTime, 
         ingredients: req.body.ingredients,
+        servings: req.body.servings,
         steps: req.body.steps}; //builds variable with new data
         
     Recipe.findByIdAndUpdate(req.params.id, updatedData, function(err, updatedRecipe){
