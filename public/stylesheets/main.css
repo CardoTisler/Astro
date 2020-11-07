@@ -1,5 +1,5 @@
 body{
-    background-color: whitesmoke !important;
+    background-color: #171d21fa !important;
     font-family: 'Lato', sans-serif;
 }
 
@@ -32,11 +32,16 @@ body{
     white-space: nowrap;
 }
 .card-body .btn-outline-info {
-    color: black;
-    border-color: #2c3e50;
+    color: whitesmoke;
+    border-color: whitesmoke;
+    background-color: #232323;
+}
+.card-body{
+    background-color: #313438;
+    color: whitesmoke;
 }
 .navbar-inverse{
-    background: #2c3e50;
+    background: #313438;
 }
 .navbar .container .navbar-brand, .btn-outline-info, .nav-item, .nav-link{
     color: whitesmoke;
