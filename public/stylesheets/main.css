@@ -2,7 +2,12 @@ body{
     background-color: #171d21fa !important;
     font-family: 'Lato', sans-serif;
 }
-
+body p{
+    color:whitesmoke;
+}
+.container h1, label{
+    color: whitesmoke;
+}
 #h1{
     font-size: 10rem; 
 }
@@ -36,6 +41,9 @@ body{
     border-color: whitesmoke;
     background-color: #232323;
 }
+.comment-wrapper .card-header {
+    background-color: #959697;
+}
 .card-body{
     background-color: #313438;
     color: whitesmoke;
@@ -48,4 +56,8 @@ body{
 }
 .navbar .navbar-header{
     margin-left: 1%;
+}
+
+#recipe-header-info h1, h3{
+    color: whitesmoke;
 }
